@@ -14,10 +14,8 @@ from telegram.ext import (
 
 # ─── Настройки ───────────────────────────────────────────────────────────────
 
-import os
-
-BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
-ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "0").strip())
+BOT_TOKEN = "8636621588:AAH-v98RLhXxoxRjyn8tReJx_NotxvQSsfs"
+ADMIN_CHAT_ID = 8538194302
 CHANNEL_URL = "https://t.me/poidemvmesteru"
 
 # ─── Состояния диалога ───────────────────────────────────────────────────────
