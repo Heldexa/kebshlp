@@ -352,5 +352,21 @@ def main() -> None:
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class PingHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"OK")
+    def log_message(self, format, *args):
+        pass  # отключаем логи пингов
+
+def run_ping_server():
+    server = HTTPServer(("0.0.0.0", 10000), PingHandler)
+    server.serve_forever()
+
+threading.Thread(target=run_ping_server, daemon=True).start()
 if __name__ == "__main__":
     main()
