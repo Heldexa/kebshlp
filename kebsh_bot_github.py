@@ -16,7 +16,6 @@ from telegram.ext import (
 
 import os
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
-print("TOKEN:", BOT_TOKEN)
 ADMIN_CHAT_ID = int(os.environ.get("ADMIN_CHAT_ID", "0"))
 CHANNEL_URL = "https://t.me/poidemvmesteru"
 
