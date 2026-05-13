@@ -15,9 +15,13 @@ from telegram.ext import (
 # ─── Настройки ───────────────────────────────────────────────────────────────
 
 import os
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-ADMIN_CHAT_ID = int(os.environ.get("ADMIN_CHAT_ID", "0"))
+
+BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
+ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "0").strip())
 CHANNEL_URL = "https://t.me/poidemvmesteru"
+
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN is missing")
 
 # ─── Состояния диалога ───────────────────────────────────────────────────────
 
