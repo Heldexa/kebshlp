@@ -20,8 +20,12 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "0").strip())
 CHANNEL_URL = "https://t.me/poidemvmesteru"
 
+print("BOT_TOKEN_EXISTS:", bool(BOT_TOKEN))
+print("BOT_TOKEN_LENGTH:", len(BOT_TOKEN))
+print("ADMIN_CHAT_ID:", ADMIN_CHAT_ID)
+
 if not BOT_TOKEN:
-    raise RuntimeError("BOT_TOKEN is missing")
+    raise RuntimeError("BOT_TOKEN is missing in Railway Variables")
 
 # ─── Состояния диалога ───────────────────────────────────────────────────────
 
